@@ -55,3 +55,29 @@ app.post("/api/notes", (req, res) => {
 });
 
 //Delete route
+// DELETE
+app.delete("/api/notes/:id", (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  fs.readFile("./Develop/db/db.json", (err, notes) => {
+    if (err) throw err;
+    let notesArr = JSON.parse(notes);
+    console.log(notesArr[0].id);
+
+    for (let i = 0; i < notesArr.length; i++) {
+      if (id === notesArr[i].id) {
+        notesArr.splice(i, 1);
+      }
+    }
+
+    fs.writeFile(
+      "./Develop/db/db.json",
+      JSON.stringify(notesArr, null, 2),
+      "utf8",
+      (err) => {
+        if (err) return console.log(err);
+        res.json(`note with id: ${id} has been deleted`);
+      }
+    );
+  });
+});
