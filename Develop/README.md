@@ -16,6 +16,7 @@
 
 ## Usage:
 ### To allow users to write and save notes
+![Untitled_ Jul 18, 2022 12_44 AM (1)](https://user-images.githubusercontent.com/104277419/179449025-5c142d8d-cbb5-4105-a9d3-72124c6a1f9b.gif)
 
 ## Contributors:
 ### Follow good Indusrty practices
